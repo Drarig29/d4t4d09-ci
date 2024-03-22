@@ -15,13 +15,12 @@ import {
 } from '@aws-sdk/client-lambda'
 import {FromIniInit, fromIni, fromNodeProviderChain} from '@aws-sdk/credential-providers'
 import {AwsCredentialIdentity, AwsCredentialIdentityProvider} from '@aws-sdk/types'
+import {API_KEY_ENV_VAR, CI_API_KEY_ENV_VAR, CI_SITE_ENV_VAR} from '@drarig29/d4t4d09-ci-core/dist/constants'
+import * as helpersRenderer from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
+import {maskString} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import {isValidDatadogSite} from '@drarig29/d4t4d09-ci-core/dist/helpers/validation'
 import {CredentialsProviderError} from '@smithy/property-provider'
 import inquirer from 'inquirer'
-
-import {API_KEY_ENV_VAR, CI_API_KEY_ENV_VAR, CI_SITE_ENV_VAR} from '../../../constants'
-import * as helpersRenderer from '../../../helpers/renderer'
-import {maskString} from '../../../helpers/utils'
-import {isValidDatadogSite} from '../../../helpers/validation'
 
 import {
   ARM64_ARCHITECTURE,

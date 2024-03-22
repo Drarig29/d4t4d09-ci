@@ -4,7 +4,7 @@ import type {Writable} from 'stream'
 import chalk from 'chalk'
 import ora from 'ora'
 
-import type {CommandContext} from '../../../helpers/interfaces'
+import type {CommandContext} from '@drarig29/d4t4d09-ci-core/dist/helpers/interfaces'
 
 import {
   Assertion,

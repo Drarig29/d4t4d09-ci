@@ -1,4 +1,4 @@
-import * as helpersRenderer from '../../helpers/renderer'
+import * as helpersRenderer from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
 
 const AUTHENTICATION_INSTRUCTIONS = [
   '\n' + helpersRenderer.renderError('Unable to authenticate with GCP.'),

@@ -1,10 +1,9 @@
+import {getCIEnv, PROVIDER_TO_DISPLAY_NAME} from '@drarig29/d4t4d09-ci-core/dist/helpers/ci'
+import {retryRequest} from '@drarig29/d4t4d09-ci-core/dist/helpers/retry'
+import {parseTags} from '@drarig29/d4t4d09-ci-core/dist/helpers/tags'
+import {getApiHostForSite, getRequestBuilder} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
 import chalk from 'chalk'
 import {Command, Option} from 'clipanion'
-
-import {getCIEnv, PROVIDER_TO_DISPLAY_NAME} from '../../helpers/ci'
-import {retryRequest} from '../../helpers/retry'
-import {parseTags} from '../../helpers/tags'
-import {getApiHostForSite, getRequestBuilder} from '../../helpers/utils'
 
 export class TagCommand extends Command {
   public static paths = [['tag']]

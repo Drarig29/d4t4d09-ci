@@ -5,7 +5,7 @@ import type {AxiosResponse} from 'axios'
 
 import axios, {AxiosError} from 'axios'
 
-import {ProxyConfiguration} from '../../../helpers/utils'
+import {ProxyConfiguration} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
 
 import {apiConstructor, formatBackendErrors, getApiHelper} from '../api'
 import {CriticalError} from '../errors'

@@ -11,9 +11,6 @@ import {
 } from '@aws-sdk/client-cloudwatch-logs'
 import {FunctionConfiguration, LambdaClient, LambdaClientConfig, ListTagsCommand} from '@aws-sdk/client-lambda'
 import {AwsCredentialIdentity} from '@aws-sdk/types'
-import chalk from 'chalk'
-import {Command, Option} from 'clipanion'
-
 import {
   ADDITIONAL_FILES_DIRECTORY,
   API_KEY_ENV_VAR,
@@ -22,14 +19,21 @@ import {
   INSIGHTS_FILE_NAME,
   LOGS_DIRECTORY,
   PROJECT_FILES_DIRECTORY,
-} from '../../constants'
-import {getProjectFiles, sendToDatadog, validateFilePath, validateStartEndFlags} from '../../helpers/flare'
-import {createDirectories, deleteFolder, writeFile, zipContents} from '../../helpers/fs'
-import {requestConfirmation, requestFilePath} from '../../helpers/prompt'
-import * as helpersRenderer from '../../helpers/renderer'
-import {renderAdditionalFiles, renderProjectFiles} from '../../helpers/renderer'
-import {formatBytes} from '../../helpers/utils'
-import {version} from '../../helpers/version'
+} from '@drarig29/d4t4d09-ci-core/dist/constants'
+import {
+  getProjectFiles,
+  sendToDatadog,
+  validateFilePath,
+  validateStartEndFlags,
+} from '@drarig29/d4t4d09-ci-core/dist/helpers/flare'
+import {createDirectories, deleteFolder, writeFile, zipContents} from '@drarig29/d4t4d09-ci-core/dist/helpers/fs'
+import {requestConfirmation, requestFilePath} from '@drarig29/d4t4d09-ci-core/dist/helpers/prompt'
+import * as helpersRenderer from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
+import {renderAdditionalFiles, renderProjectFiles} from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
+import {formatBytes} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
+import chalk from 'chalk'
+import {Command, Option} from 'clipanion'
 
 import {
   AWS_DEFAULT_REGION_ENV_VAR,

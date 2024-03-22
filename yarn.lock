@@ -2030,6 +2030,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@drarig29/d4t4d09-ci-core@workspace:^, @drarig29/d4t4d09-ci-core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@drarig29/d4t4d09-ci-core@workspace:packages/core"
+  dependencies:
+    axios: ^1.6.8
+    clipanion: ^3.2.1
+    deep-extend: 0.6.0
+    inquirer: ^8.2.5
+    proxy-agent: ^6.4.0
+  languageName: unknown
+  linkType: soft
+
+"@drarig29/d4t4d09-ci-plugin-synthetics@workspace:^, @drarig29/d4t4d09-ci-plugin-synthetics@workspace:packages/plugin-synthetics":
+  version: 0.0.0-use.local
+  resolution: "@drarig29/d4t4d09-ci-plugin-synthetics@workspace:packages/plugin-synthetics"
+  dependencies:
+    "@drarig29/d4t4d09-ci-core": "workspace:^"
+    clipanion: ^3.2.1
+  languageName: unknown
+  linkType: soft
+
 "@drarig29/d4t4d09-ci@workspace:.":
   version: 0.0.0-use.local
   resolution: "@drarig29/d4t4d09-ci@workspace:."
@@ -2043,6 +2064,8 @@ __metadata:
     "@babel/core": 7.8.0
     "@babel/preset-env": 7.4.5
     "@babel/preset-typescript": 7.3.3
+    "@drarig29/d4t4d09-ci-core": "workspace:^"
+    "@drarig29/d4t4d09-ci-plugin-synthetics": "workspace:^"
     "@google-cloud/logging": ^11.0.0
     "@google-cloud/run": ^1.0.2
     "@microsoft/eslint-formatter-sarif": ^3.0.0

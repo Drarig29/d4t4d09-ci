@@ -1,6 +1,5 @@
+import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
 import {Command} from 'clipanion'
-
-import {version} from '../../helpers/version'
 
 class VersionCommand extends Command {
   public static paths = [['version']]

@@ -5,7 +5,6 @@ import {
   Runtime,
   UpdateFunctionConfigurationCommandInput,
 } from '@aws-sdk/client-lambda'
-
 import {
   API_KEY_ENV_VAR,
   CI_API_KEY_ENV_VAR,
@@ -14,8 +13,8 @@ import {
   SERVICE_ENV_VAR,
   SITE_ENV_VAR,
   VERSION_ENV_VAR,
-} from '../../../constants'
-import {isValidDatadogSite} from '../../../helpers/validation'
+} from '@drarig29/d4t4d09-ci-core/dist/constants'
+import {isValidDatadogSite} from '@drarig29/d4t4d09-ci-core/dist/helpers/validation'
 
 import {
   API_KEY_SECRET_ARN_ENV_VAR,

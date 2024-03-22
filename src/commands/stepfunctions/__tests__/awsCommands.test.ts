@@ -15,9 +15,8 @@ import {
   DescribeStateMachineCommandOutput,
   LogLevel,
 } from '@aws-sdk/client-sfn'
+import {createMockContext} from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
 import {mockClient} from 'aws-sdk-client-mock'
-
-import {createMockContext} from '../../../helpers/__tests__/fixtures'
 
 import {
   createLogGroup,

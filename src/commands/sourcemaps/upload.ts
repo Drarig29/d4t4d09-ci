@@ -1,21 +1,24 @@
 import path from 'path'
 import {URL} from 'url'
 
+import {ApiKeyValidator, newApiKeyValidator} from '@drarig29/d4t4d09-ci-core/dist/helpers/apikey'
+import {getBaseSourcemapIntakeUrl} from '@drarig29/d4t4d09-ci-core/dist/helpers/base-intake-url'
+import {doWithMaxConcurrency} from '@drarig29/d4t4d09-ci-core/dist/helpers/concurrency'
+import {InvalidConfigurationError} from '@drarig29/d4t4d09-ci-core/dist/helpers/errors'
+import {
+  getRepositoryData,
+  newSimpleGit,
+  RepositoryData,
+} from '@drarig29/d4t4d09-ci-core/dist/helpers/git/format-git-sourcemaps-data'
+import {RequestBuilder} from '@drarig29/d4t4d09-ci-core/dist/helpers/interfaces'
+import {getMetricsLogger, MetricsLogger} from '@drarig29/d4t4d09-ci-core/dist/helpers/metrics'
+import {upload, UploadStatus} from '@drarig29/d4t4d09-ci-core/dist/helpers/upload'
+import {getRequestBuilder, buildPath} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import * as validation from '@drarig29/d4t4d09-ci-core/dist/helpers/validation'
+import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
 import chalk from 'chalk'
 import {Command, Option} from 'clipanion'
 import glob from 'glob'
-
-import {ApiKeyValidator, newApiKeyValidator} from '../../helpers/apikey'
-import {getBaseSourcemapIntakeUrl} from '../../helpers/base-intake-url'
-import {doWithMaxConcurrency} from '../../helpers/concurrency'
-import {InvalidConfigurationError} from '../../helpers/errors'
-import {getRepositoryData, newSimpleGit, RepositoryData} from '../../helpers/git/format-git-sourcemaps-data'
-import {RequestBuilder} from '../../helpers/interfaces'
-import {getMetricsLogger, MetricsLogger} from '../../helpers/metrics'
-import {upload, UploadStatus} from '../../helpers/upload'
-import {getRequestBuilder, buildPath} from '../../helpers/utils'
-import * as validation from '../../helpers/validation'
-import {version} from '../../helpers/version'
 
 import {Sourcemap} from './interfaces'
 import {

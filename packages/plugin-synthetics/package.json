@@ -1,0 +1,10 @@
+{
+  "name": "@drarig29/d4t4d09-ci-plugin-synthetics",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "dependencies": {
+    "@drarig29/d4t4d09-ci-core": "workspace:^",
+    "clipanion": "^3.2.1"
+  }
+}

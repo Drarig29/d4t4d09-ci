@@ -7,9 +7,13 @@ import {
   ListFunctionsCommand,
   Runtime,
 } from '@aws-sdk/client-lambda'
+import {
+  ENVIRONMENT_ENV_VAR,
+  SERVICE_ENV_VAR,
+  SITE_ENV_VAR,
+  VERSION_ENV_VAR,
+} from '@drarig29/d4t4d09-ci-core/dist/constants'
 import {mockClient} from 'aws-sdk-client-mock'
-
-import {ENVIRONMENT_ENV_VAR, SERVICE_ENV_VAR, SITE_ENV_VAR, VERSION_ENV_VAR} from '../../../../constants'
 
 import {
   FLUSH_TO_LOG_ENV_VAR,
