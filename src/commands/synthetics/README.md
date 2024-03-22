@@ -16,7 +16,7 @@ To configure which URL your test starts on, provide a `startUrl` to your test ob
 Install the package through NPM:
 
 ```bash
-npm install --save-dev @datadog/datadog-ci
+npm install --save-dev @drarig29/d4t4d09-ci
 ```
 
 <!-- xxz tab xxx -->
@@ -25,7 +25,7 @@ npm install --save-dev @datadog/datadog-ci
 Install the package through Yarn:
 
 ```bash
-yarn add --dev @datadog/datadog-ci
+yarn add --dev @drarig29/d4t4d09-ci
 ```
 
 <!-- xxz tab xxx -->
@@ -500,7 +500,7 @@ Additional helpful documentation, links, and articles:
 - [Learn about the Continuous Testing Explorer][8]
 - [Learn about the Continuous Testing Tunnel][3]
 
-[1]: https://www.npmjs.com/package/@datadog/datadog-ci
+[1]: https://www.npmjs.com/package/@drarig29/d4t4d09-ci
 [2]: https://github.com/TooTallNate/node-proxy-agent
 [3]: https://docs.datadoghq.com/continuous_testing/testing_tunnel/
 [4]: https://app.datadoghq.com/synthetics/explorer/

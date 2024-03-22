@@ -1968,9 +1968,71 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@datadog/datadog-ci@workspace:.":
+"@datadog/native-appsec@npm:7.0.0":
+  version: 7.0.0
+  resolution: "@datadog/native-appsec@npm:7.0.0"
+  dependencies:
+    node-gyp: latest
+    node-gyp-build: ^3.9.0
+  checksum: 642041b499d56b381a93bd4755e280b345c8872eec37f73b0a5e84edf3c078a875882941930dd4657175dbe63e64770c1e40830bc86f67c6784d21d1e9d645fd
+  languageName: node
+  linkType: hard
+
+"@datadog/native-iast-rewriter@npm:2.2.2":
+  version: 2.2.2
+  resolution: "@datadog/native-iast-rewriter@npm:2.2.2"
+  dependencies:
+    lru-cache: ^7.14.0
+    node-gyp-build: ^4.5.0
+  checksum: c3aea33ebef2cc0d7536a8268b924ce93b345cf2189e435d824e5e0d45fef8f3a6b728858bb589f1a905f99fc9ce80675e9fbffe8041b05427ee664dec3c459b
+  languageName: node
+  linkType: hard
+
+"@datadog/native-iast-taint-tracking@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@datadog/native-iast-taint-tracking@npm:1.6.4"
+  dependencies:
+    node-gyp: latest
+    node-gyp-build: ^3.9.0
+  checksum: 7b51741338d87c876442f58733ecb38ff6143e54698fd218c705da2e37d56eefe10a3baecb893df0904f702c05e98b8ac7addeeba337a7d277ba8a0e2f676dad
+  languageName: node
+  linkType: hard
+
+"@datadog/native-metrics@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@datadog/native-metrics@npm:2.0.0"
+  dependencies:
+    node-addon-api: ^6.1.0
+    node-gyp: latest
+    node-gyp-build: ^3.9.0
+  checksum: 3975904bebb6a073158d8e3fbee35208d3d98c9c03c8ed5e9dac02e31bfdc165b1d87452ac2e888bbbf0674a66567486493353cc1a9b4ec67e24347b323b530e
+  languageName: node
+  linkType: hard
+
+"@datadog/pprof@npm:5.0.0":
+  version: 5.0.0
+  resolution: "@datadog/pprof@npm:5.0.0"
+  dependencies:
+    delay: ^5.0.0
+    node-gyp: latest
+    node-gyp-build: <4.0
+    p-limit: ^3.1.0
+    pprof-format: ^2.0.7
+    source-map: ^0.7.4
+  checksum: 461935b1050228032e3104fc8dae7f6b313ea39bb16c6c54aba4906a5d139a6de40731e93cbe4e0394e63ae5f73b660638fc6f014e4c1aa9feda091c2813029c
+  languageName: node
+  linkType: hard
+
+"@datadog/sketches-js@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@datadog/sketches-js@npm:2.1.0"
+  checksum: 7980eb6a36a53c3c532f9712dfadae8fb7b626bf4e418bb7e252020e2e6cc5690e2c17057d0b462719364239df502d44487f8b50ac9c5c6923f006658e376131
+  languageName: node
+  linkType: hard
+
+"@drarig29/d4t4d09-ci@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@datadog/datadog-ci@workspace:."
+  resolution: "@drarig29/d4t4d09-ci@workspace:."
   dependencies:
     "@aws-sdk/client-cloudwatch-logs": ^3.454.0
     "@aws-sdk/client-iam": ^3.454.0
@@ -2058,71 +2120,9 @@ __metadata:
     xml2js: 0.5.0
     yamux-js: 0.1.2
   bin:
-    datadog-ci: dist/cli.js
+    d4t4d09-ci: dist/cli.js
   languageName: unknown
   linkType: soft
-
-"@datadog/native-appsec@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@datadog/native-appsec@npm:7.0.0"
-  dependencies:
-    node-gyp: latest
-    node-gyp-build: ^3.9.0
-  checksum: 642041b499d56b381a93bd4755e280b345c8872eec37f73b0a5e84edf3c078a875882941930dd4657175dbe63e64770c1e40830bc86f67c6784d21d1e9d645fd
-  languageName: node
-  linkType: hard
-
-"@datadog/native-iast-rewriter@npm:2.2.2":
-  version: 2.2.2
-  resolution: "@datadog/native-iast-rewriter@npm:2.2.2"
-  dependencies:
-    lru-cache: ^7.14.0
-    node-gyp-build: ^4.5.0
-  checksum: c3aea33ebef2cc0d7536a8268b924ce93b345cf2189e435d824e5e0d45fef8f3a6b728858bb589f1a905f99fc9ce80675e9fbffe8041b05427ee664dec3c459b
-  languageName: node
-  linkType: hard
-
-"@datadog/native-iast-taint-tracking@npm:1.6.4":
-  version: 1.6.4
-  resolution: "@datadog/native-iast-taint-tracking@npm:1.6.4"
-  dependencies:
-    node-gyp: latest
-    node-gyp-build: ^3.9.0
-  checksum: 7b51741338d87c876442f58733ecb38ff6143e54698fd218c705da2e37d56eefe10a3baecb893df0904f702c05e98b8ac7addeeba337a7d277ba8a0e2f676dad
-  languageName: node
-  linkType: hard
-
-"@datadog/native-metrics@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@datadog/native-metrics@npm:2.0.0"
-  dependencies:
-    node-addon-api: ^6.1.0
-    node-gyp: latest
-    node-gyp-build: ^3.9.0
-  checksum: 3975904bebb6a073158d8e3fbee35208d3d98c9c03c8ed5e9dac02e31bfdc165b1d87452ac2e888bbbf0674a66567486493353cc1a9b4ec67e24347b323b530e
-  languageName: node
-  linkType: hard
-
-"@datadog/pprof@npm:5.0.0":
-  version: 5.0.0
-  resolution: "@datadog/pprof@npm:5.0.0"
-  dependencies:
-    delay: ^5.0.0
-    node-gyp: latest
-    node-gyp-build: <4.0
-    p-limit: ^3.1.0
-    pprof-format: ^2.0.7
-    source-map: ^0.7.4
-  checksum: 461935b1050228032e3104fc8dae7f6b313ea39bb16c6c54aba4906a5d139a6de40731e93cbe4e0394e63ae5f73b660638fc6f014e4c1aa9feda091c2813029c
-  languageName: node
-  linkType: hard
-
-"@datadog/sketches-js@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@datadog/sketches-js@npm:2.1.0"
-  checksum: 7980eb6a36a53c3c532f9712dfadae8fb7b626bf4e418bb7e252020e2e6cc5690e2c17057d0b462719364239df502d44487f8b50ac9c5c6923f006658e376131
-  languageName: node
-  linkType: hard
 
 "@eslint-community/eslint-utils@npm:^4.2.0":
   version: 4.4.0

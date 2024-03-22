@@ -244,7 +244,7 @@ yarn link
 Run this command in your project:
 
 ```bash
-yarn link @datadog/datadog-ci
+yarn link @drarig29/d4t4d09-ci
 ```
 
 If running `yarn datadog-ci` in your project returns `error Command "datadog-ci" not found.`, run the following:
