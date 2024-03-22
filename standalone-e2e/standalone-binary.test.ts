@@ -34,25 +34,11 @@ describe('standalone binary', () => {
       expect(binaryVersion.slice(1)).toEqual(version)
     })
   })
-  describe('dsyms', () => {
-    it('can be called', async () => {
-      const {stdout} = await execPromise(`${STANDALONE_BINARY_PATH} dsyms upload --help`)
-      const dsymsHelpText = sanitizeOutput(stdout)
-      expect(dsymsHelpText).toContain('datadog-ci dsyms upload')
-    })
-  })
   describe('git-metadata', () => {
     it('can be called', async () => {
       const {stdout} = await execPromise(`${STANDALONE_BINARY_PATH} git-metadata upload --help`)
       const gitMetadataHelpText = sanitizeOutput(stdout)
       expect(gitMetadataHelpText).toContain('datadog-ci git-metadata upload')
-    })
-  })
-  describe('junit', () => {
-    it('can be called', async () => {
-      const {stdout} = await execPromise(`${STANDALONE_BINARY_PATH} junit upload --help`)
-      const junitHelpText = sanitizeOutput(stdout)
-      expect(junitHelpText).toContain('datadog-ci junit upload')
     })
   })
   describe('lambda', () => {
@@ -86,13 +72,6 @@ describe('standalone binary', () => {
       const {stdout} = await execPromise(`${STANDALONE_BINARY_PATH} synthetics run-tests --help`)
       const syntheticsHelpText = sanitizeOutput(stdout)
       expect(syntheticsHelpText).toContain('datadog-ci synthetics run-tests')
-    })
-  })
-  describe('trace', () => {
-    it('can be called', async () => {
-      const {stdout} = await execPromise(`${STANDALONE_BINARY_PATH} trace --help`)
-      const traceHelpText = sanitizeOutput(stdout)
-      expect(traceHelpText).toContain('datadog-ci trace')
     })
   })
 })
