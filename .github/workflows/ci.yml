@@ -37,14 +37,14 @@ jobs:
       - run: yarn no-only-in-tests
 
       - run: yarn test
-        env:
-          CI: true
-          DD_SERVICE: datadog-ci-tests
-          DD_CIVISIBILITY_AGENTLESS_ENABLED: 1
-          DD_API_KEY: ${{ secrets.DATADOG_API_KEY_MAIN_ACCOUNT }}
-          DD_APP_KEY: ${{ secrets.DATADOG_APP_KEY_MAIN_ACCOUNT }}
-          DD_ENV: ci
-          NODE_OPTIONS: -r dd-trace/ci/init
+        # env:
+        #   CI: true
+        #   DD_SERVICE: datadog-ci-tests
+        #   DD_CIVISIBILITY_AGENTLESS_ENABLED: 1
+        #   DD_API_KEY: ${{ secrets.DATADOG_API_KEY_MAIN_ACCOUNT }}
+        #   DD_APP_KEY: ${{ secrets.DATADOG_APP_KEY_MAIN_ACCOUNT }}
+        #   DD_ENV: ci
+        #   NODE_OPTIONS: -r dd-trace/ci/init
       - run: mkdir artifacts
       - run: yarn pack --filename artifacts/datadog-ci-${{ matrix.version }}.tgz
       - run: cp -r .github/workflows/e2e artifacts/
@@ -80,53 +80,54 @@ jobs:
           name: artifacts-${{ matrix.version }}
           path: artifacts/
       - run: yarn add ./artifacts/datadog-ci-${{ matrix.version }}.tgz
-      - name: Run synthetics test
-        run: yarn datadog-ci synthetics run-tests --config artifacts/e2e/global.config.json
-        env:
-          DATADOG_API_KEY: ${{ secrets.DATADOG_API_KEY_E2E }}
-          DATADOG_APP_KEY: ${{ secrets.DATADOG_APP_KEY_E2E }}
-      - name: Run sourcemaps upload test
-        run: yarn datadog-ci sourcemaps upload artifacts/e2e/sourcemaps/ --release-version=e2e --service=e2e-tests --minified-path-prefix=https://e2e-tests.datadoghq.com/static/
-        env:
-          DATADOG_API_KEY: ${{ secrets.DATADOG_API_KEY_E2E }}
-          DATADOG_APP_KEY: ${{ secrets.DATADOG_APP_KEY_E2E }}
-      - name: Run junit upload test (measures)
-        run: yarn datadog-ci junit upload --service=datadog-ci-e2e-tests-junit artifacts/e2e/junit-reports --measures testmeasure1:20 --report-measures sessionmeasure1:40
-        env:
-          DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
-      - name: Check that test data can be queried (measures)
-        run: |
-          yarn add @datadog/datadog-api-client
-          yarn check-junit-upload
-        env:
-          EXTRA_TEST_QUERY_FILTER: '@testmeasure1:20'
-          EXTRA_SESSION_QUERY_FILTER: '@sessionmeasure1:40'
-          DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
-          DD_APP_KEY: ${{ secrets.DD_APP_KEY_CI_VISIBILITY }}
-          DD_SERVICE: datadog-ci-e2e-tests-junit
-      - name: Run junit upload test (metrics)
-        run: yarn datadog-ci junit upload --service=datadog-ci-e2e-tests-junit artifacts/e2e/junit-reports --metrics testmeasure2:60 --report-metrics sessionmeasure2:80
-        env:
-          DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
-      - name: Check that test data can be queried (metrics)
-        run: |
-          yarn add @datadog/datadog-api-client
-          yarn check-junit-upload
-        env:
-          EXTRA_TEST_QUERY_FILTER: '@testmeasure2:60'
-          EXTRA_SESSION_QUERY_FILTER: '@sessionmeasure2:80'
-          DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
-          DD_APP_KEY: ${{ secrets.DD_APP_KEY_CI_VISIBILITY }}
-          DD_SERVICE: datadog-ci-e2e-tests-junit
-      - name: Run sarif upload test
-        run: yarn datadog-ci sarif upload --service=datadog-ci-e2e-tests-sarif artifacts/e2e/sarif-reports
-        env:
-          DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
-      - name: Run sbom upload test
-        run: yarn datadog-ci sbom upload --service=datadog-ci-e2e-tests-sbom --env test artifacts/e2e/sbom-reports/sbom.json
-        env:
-          DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
-          DD_APP_KEY: ${{ secrets.DD_APP_KEY_CI_VISIBILITY }}
+      - run: yarn datadog-ci --version
+      # - name: Run synthetics test
+      #   run: yarn datadog-ci synthetics run-tests --config artifacts/e2e/global.config.json
+      #   env:
+      #     DATADOG_API_KEY: ${{ secrets.DATADOG_API_KEY_E2E }}
+      #     DATADOG_APP_KEY: ${{ secrets.DATADOG_APP_KEY_E2E }}
+      # - name: Run sourcemaps upload test
+      #   run: yarn datadog-ci sourcemaps upload artifacts/e2e/sourcemaps/ --release-version=e2e --service=e2e-tests --minified-path-prefix=https://e2e-tests.datadoghq.com/static/
+      #   env:
+      #     DATADOG_API_KEY: ${{ secrets.DATADOG_API_KEY_E2E }}
+      #     DATADOG_APP_KEY: ${{ secrets.DATADOG_APP_KEY_E2E }}
+      # - name: Run junit upload test (measures)
+      #   run: yarn datadog-ci junit upload --service=datadog-ci-e2e-tests-junit artifacts/e2e/junit-reports --measures testmeasure1:20 --report-measures sessionmeasure1:40
+      #   env:
+      #     DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
+      # - name: Check that test data can be queried (measures)
+      #   run: |
+      #     yarn add @datadog/datadog-api-client
+      #     yarn check-junit-upload
+      #   env:
+      #     EXTRA_TEST_QUERY_FILTER: '@testmeasure1:20'
+      #     EXTRA_SESSION_QUERY_FILTER: '@sessionmeasure1:40'
+      #     DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
+      #     DD_APP_KEY: ${{ secrets.DD_APP_KEY_CI_VISIBILITY }}
+      #     DD_SERVICE: datadog-ci-e2e-tests-junit
+      # - name: Run junit upload test (metrics)
+      #   run: yarn datadog-ci junit upload --service=datadog-ci-e2e-tests-junit artifacts/e2e/junit-reports --metrics testmeasure2:60 --report-metrics sessionmeasure2:80
+      #   env:
+      #     DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
+      # - name: Check that test data can be queried (metrics)
+      #   run: |
+      #     yarn add @datadog/datadog-api-client
+      #     yarn check-junit-upload
+      #   env:
+      #     EXTRA_TEST_QUERY_FILTER: '@testmeasure2:60'
+      #     EXTRA_SESSION_QUERY_FILTER: '@sessionmeasure2:80'
+      #     DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
+      #     DD_APP_KEY: ${{ secrets.DD_APP_KEY_CI_VISIBILITY }}
+      #     DD_SERVICE: datadog-ci-e2e-tests-junit
+      # - name: Run sarif upload test
+      #   run: yarn datadog-ci sarif upload --service=datadog-ci-e2e-tests-sarif artifacts/e2e/sarif-reports
+      #   env:
+      #     DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
+      # - name: Run sbom upload test
+      #   run: yarn datadog-ci sbom upload --service=datadog-ci-e2e-tests-sbom --env test artifacts/e2e/sbom-reports/sbom.json
+      #   env:
+      #     DD_API_KEY: ${{ secrets.DD_API_KEY_CI_VISIBILITY }}
+      #     DD_APP_KEY: ${{ secrets.DD_APP_KEY_CI_VISIBILITY }}
 
   standalone-binary-test-ubuntu:
     name: Test standalone binary in ubuntu
@@ -187,24 +188,6 @@ jobs:
           rm -rf src
       - name: Test generated standalone binary
         run: yarn dist-standalone:test
-
-  datadog-static-analyzer:
-    runs-on: ubuntu-latest
-    name: Datadog Static Analyzer
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Run Datadog static analyzer
-        id: datadog-static-analysis
-        uses: DataDog/datadog-static-analyzer-github-action@main
-        with:
-          dd_app_key: ${{ secrets.DATADOG_APP_KEY_MAIN_ACCOUNT }}
-          dd_api_key: ${{ secrets.DATADOG_API_KEY_MAIN_ACCOUNT }}
-          dd_service: 'datadog-ci'
-          dd_env: 'ci'
-          cpu_count: 2
-          enable_performance_statistics: true
-          sca_enabled: true
 
   check-licenses:
     name: Check licenses

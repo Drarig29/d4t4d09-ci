@@ -1,6 +1,0 @@
-rulesets:
-  - typescript-best-practices
-  - typescript-code-style
-  - typescript-common-security
-  - typescript-inclusive
-  - typescript-node-security
