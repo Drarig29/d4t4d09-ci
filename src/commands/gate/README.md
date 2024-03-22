@@ -57,7 +57,7 @@ Successful output looks like the example below:
 
 ```bash
 ℹ️ Evaluating rules matching the following information:
-Repository: git@github.com:DataDog/datadog-ci.git
+Repository: git@github.com:Drarig29/d4t4d09-ci.git
 Branch: master
 team: backend
 

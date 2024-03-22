@@ -280,7 +280,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       // throw an exception after the update shallow to shortcut the rest of the test as we only
@@ -341,7 +341,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       // throw an exception after the update shallow to shortcut the rest of the test as we only
@@ -373,7 +373,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       // throw an exception after the update shallow to shortcut the rest of the test as we only
@@ -441,7 +441,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       // throw an exception after the update shallow to shortcut the rest of the test as we only
@@ -523,7 +523,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       // throw an exception after the update shallow to shortcut the rest of the test as we only
@@ -555,7 +555,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       log: [
@@ -601,7 +601,7 @@ describe('gitdb', () => {
             url: '/api/v2/git/repository/search_commits',
             data: {
               meta: {
-                repository_url: 'https://github.com/DataDog/datadog-ci',
+                repository_url: 'https://github.com/Drarig29/d4t4d09-ci',
               },
               data: [
                 {
@@ -741,7 +741,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       log: [
@@ -787,7 +787,7 @@ describe('gitdb', () => {
             url: '/api/v2/git/repository/search_commits',
             data: {
               meta: {
-                repository_url: 'https://github.com/DataDog/datadog-ci',
+                repository_url: 'https://github.com/Drarig29/d4t4d09-ci',
               },
               data: [
                 {
@@ -838,7 +838,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       log: [
@@ -884,7 +884,7 @@ describe('gitdb', () => {
             url: '/api/v2/git/repository/search_commits',
             data: {
               meta: {
-                repository_url: 'https://github.com/DataDog/datadog-ci',
+                repository_url: 'https://github.com/Drarig29/d4t4d09-ci',
               },
               data: [
                 {
@@ -905,7 +905,7 @@ describe('gitdb', () => {
             url: '/api/v2/git/repository/search_commits',
             data: {
               meta: {
-                repository_url: 'https://github.com/DataDog/datadog-ci',
+                repository_url: 'https://github.com/Drarig29/d4t4d09-ci',
               },
               data: [
                 {
@@ -956,7 +956,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       log: [
@@ -984,7 +984,7 @@ describe('gitdb', () => {
             url: '/api/v2/git/repository/search_commits',
             data: {
               meta: {
-                repository_url: 'https://github.com/DataDog/datadog-ci',
+                repository_url: 'https://github.com/Drarig29/d4t4d09-ci',
               },
               data: [
                 {
@@ -1005,7 +1005,7 @@ describe('gitdb', () => {
             url: '/api/v2/git/repository/search_commits',
             data: {
               meta: {
-                repository_url: 'https://github.com/DataDog/datadog-ci',
+                repository_url: 'https://github.com/Drarig29/d4t4d09-ci',
               },
               data: [
                 {
@@ -1026,7 +1026,7 @@ describe('gitdb', () => {
             url: '/api/v2/git/repository/search_commits',
             data: {
               meta: {
-                repository_url: 'https://github.com/DataDog/datadog-ci',
+                repository_url: 'https://github.com/Drarig29/d4t4d09-ci',
               },
               data: [
                 {
@@ -1061,7 +1061,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       log: [
@@ -1089,7 +1089,7 @@ describe('gitdb', () => {
             url: '/api/v2/git/repository/search_commits',
             data: {
               meta: {
-                repository_url: 'https://github.com/DataDog/datadog-ci',
+                repository_url: 'https://github.com/Drarig29/d4t4d09-ci',
               },
               data: [
                 {
@@ -1135,7 +1135,7 @@ describe('gitdb', () => {
       getRemotes: [
         {
           input: undefined,
-          output: [{name: 'origin', refs: {push: 'https://github.com/DataDog/datadog-ci'}}],
+          output: [{name: 'origin', refs: {push: 'https://github.com/Drarig29/d4t4d09-ci'}}],
         },
       ],
       log: [
@@ -1176,7 +1176,7 @@ describe('gitdb', () => {
             url: '/api/v2/git/repository/search_commits',
             data: {
               meta: {
-                repository_url: 'https://github.com/DataDog/datadog-ci',
+                repository_url: 'https://github.com/Drarig29/d4t4d09-ci',
               },
               data: [
                 {

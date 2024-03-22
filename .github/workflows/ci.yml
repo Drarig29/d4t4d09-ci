@@ -29,7 +29,7 @@ jobs:
             jq '.runs[].results' sarif-datadog-ci.sarif
 
             echo ""
-            echo "Find the full SARIF report in the Artifacts section here: https://github.com/DataDog/datadog-ci/actions/runs/${{ github.run_id }}"
+            echo "Find the full SARIF report in the Artifacts section here: https://github.com/Drarig29/d4t4d09-ci/actions/runs/${{ github.run_id }}"
             echo "You can fix this by running ==> yarn format <=="
             echo ""
             exit 1

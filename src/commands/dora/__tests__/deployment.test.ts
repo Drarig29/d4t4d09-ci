@@ -47,17 +47,16 @@ describe('execute', () => {
       jest.useRealTimers()
     })
     test('with all parameters provided', async () => {
-      /* eslint-disable prettier/prettier */
+      // prettier-ignore
       const {context, code} = await runCLI([
         '--dry-run',
         '--service', 'test-service',
         '--started-at', '1699960648',
         '--finished-at', '1699960650',
         '--env', 'test',
-        '--git-repository-url', 'https://github.com/DataDog/datadog-ci',
+        '--git-repository-url', 'https://github.com/Drarig29/d4t4d09-ci',
         '--git-commit-sha', '2186e1b0ab2a87e312a8c831d5bc947fa081d4f9',
       ])
-      /* eslint-enable prettier/prettier */
       expect(code).toBe(0)
       checkDryRunConsoleOutput(context.stdout, {
         service: 'test-service',
@@ -65,20 +64,19 @@ describe('execute', () => {
         finishedAt: new Date(1699960650000),
         env: 'test',
         git: {
-          repoURL: 'https://github.com/DataDog/datadog-ci',
+          repoURL: 'https://github.com/Drarig29/d4t4d09-ci',
           commitSHA: '2186e1b0ab2a87e312a8c831d5bc947fa081d4f9',
         },
       })
     })
     test('with minimal parameters provided', async () => {
-      /* eslint-disable prettier/prettier */
+      // prettier-ignore
       const {context, code} = await runCLI([
         '--dry-run',
         '--skip-git',
         '--service', 'test-service',
         '--started-at', '1699960648',
       ])
-      /* eslint-enable prettier/prettier */
       expect(code).toBe(0)
       checkDryRunConsoleOutput(context.stdout, {
         service: 'test-service',
@@ -91,13 +89,12 @@ describe('execute', () => {
         DD_SERVICE: 'different-test-service',
         DD_ENV: 'test-env',
       }
-      /* eslint-disable prettier/prettier */
+      // prettier-ignore
       const {context, code} = await runCLI([
         '--dry-run',
         '--skip-git',
         '--started-at', '1699960648',
       ], envVars)
-      /* eslint-enable prettier/prettier */
       expect(code).toBe(0)
       checkDryRunConsoleOutput(context.stdout, {
         service: envVars.DD_SERVICE,
@@ -110,18 +107,17 @@ describe('execute', () => {
       const mockGitRepositoryURL = jest.spyOn(gitFunctions, 'gitRepositoryURL')
       const mockGitHash = jest.spyOn(gitFunctions, 'gitHash')
       const gitInfo = {
-        repoURL: 'https://github.com/DataDog/datadog-ci',
+        repoURL: 'https://github.com/Drarig29/d4t4d09-ci',
         commitSHA: '2186e1b0ab2a87e312a8c831d5bc947fa081d4f9',
       }
       mockGitRepositoryURL.mockResolvedValue(gitInfo.repoURL)
       mockGitHash.mockResolvedValue(gitInfo.commitSHA)
-      /* eslint-disable prettier/prettier */
+      // prettier-ignore
       const {context, code} = await runCLI([
         '--dry-run',
         '--service', 'test-service',
         '--started-at', '1699960648',
       ])
-      /* eslint-enable prettier/prettier */
       expect(code).toBe(0)
       expect(mockGitRepositoryURL).toHaveBeenCalled()
       expect(mockGitHash).toHaveBeenCalled()
@@ -133,36 +129,33 @@ describe('execute', () => {
       })
     })
     test('service is required', async () => {
-      /* eslint-disable prettier/prettier */
+      // prettier-ignore
       const {context, code} = await runCLI([
         '--dry-run',
         '--skip-git',
         '--started-at', '1699960648',
       ])
-      /* eslint-enable prettier/prettier */
       expect(code).not.toBe(0)
       expect(context.stdout.toString()).toContain('--service')
     })
     test('started-at is required', async () => {
-      /* eslint-disable prettier/prettier */
+      // prettier-ignore
       const {context, code} = await runCLI([
         '--dry-run',
         '--skip-git',
         '--service', 'test-service',
       ])
-      /* eslint-enable prettier/prettier */
       expect(code).not.toBe(0)
       expect(context.stdout.toString()).toContain('--started-at')
     })
     test('started-at after finished-at is rejected', async () => {
-      /* eslint-disable prettier/prettier */
+      // prettier-ignore
       const {context, code} = await runCLI([
         '--dry-run',
         '--skip-git',
         '--service', 'test-service',
         '--started-at', '2099-11-14T11:17:28Z',
       ])
-      /* eslint-enable prettier/prettier */
       expect(code).not.toBe(0)
       expect(context.stdout.toString()).toContain('--started-at')
     })

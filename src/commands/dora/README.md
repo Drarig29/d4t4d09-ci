@@ -19,7 +19,7 @@ $ DD_BETA_COMMANDS_ENABLED=1 datadog-ci dora deployment [--service #0] [--env #0
 
   --started-at #0            In Unix seconds or ISO8601. (Examples: 1699960648, 2023-11-14T11:17:28Z)
   --finished-at #0           In Unix seconds or ISO8601. (Examples: 1699961048, 2023-11-14T11:24:08Z)
-  --git-repository-url #0    Example: https://github.com/DataDog/datadog-ci.git
+  --git-repository-url #0    Example: https://github.com/Drarig29/d4t4d09-ci.git
   --git-commit-sha #0        Example: 102836a25f5477e571c73d489b3f0f183687068e
   --skip-git                 Disables sending git URL and SHA. Change Lead Time will not be available
 ```
@@ -76,7 +76,7 @@ This is an example of a successful output:
 
 ```bash
 ⚠️ --git-repository-url or --git-commit-sha not provided.
-Assuming deployment of the current HEAD commit: git@github.com:DataDog/datadog-ci.git 400beb0f276d923846cf778b9dbe9cf101306e41
+Assuming deployment of the current HEAD commit: git@github.com:Drarig29/d4t4d09-ci.git 400beb0f276d923846cf778b9dbe9cf101306e41
 This warning can be disabled with --skip-git but git data is required for Change Lead Time.
 [DRYRUN] Sending DORA deployment event for service: dora-api
  data: {
@@ -84,7 +84,7 @@ This warning can be disabled with --skip-git but git data is required for Change
   "startedAt": "2023-11-14T17:14:16.000Z",
   "finishedAt": "2023-11-14T17:14:18.574Z",
   "git": {
-    "repoURL": "git@github.com:DataDog/datadog-ci.git",
+    "repoURL": "git@github.com:Drarig29/d4t4d09-ci.git",
     "commitSHA": "400beb0f276d923846cf778b9dbe9cf101306e41"
   }
 }

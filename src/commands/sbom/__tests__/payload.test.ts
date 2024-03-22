@@ -31,7 +31,7 @@ describe('generation of payload', () => {
     expect(payload?.commit.author_email).toStrictEqual(expect.any(String))
     expect(payload?.commit.branch).toStrictEqual(expect.any(String))
     expect(payload?.repository.url).toContain('github.com')
-    expect(payload?.repository.url).toContain('DataDog/datadog-ci')
+    expect(payload?.repository.url).toContain('Drarig29/d4t4d09-ci')
     expect(payload?.dependencies.length).toBe(62)
     expect(payload?.dependencies[0].name).toBe('stack-cors')
     expect(payload?.dependencies[0].version).toBe('1.3.0')
@@ -58,7 +58,7 @@ describe('generation of payload', () => {
     expect(payload?.commit.author_email).toStrictEqual(expect.any(String))
     expect(payload?.commit.branch).toStrictEqual(expect.any(String))
     expect(payload?.repository.url).toContain('github.com')
-    expect(payload?.repository.url).toContain('DataDog/datadog-ci')
+    expect(payload?.repository.url).toContain('Drarig29/d4t4d09-ci')
     expect(payload?.dependencies.length).toBe(147)
 
     const dependenciesWithoutLicense = payload?.dependencies.filter((d) => d.licenses.length === 0)

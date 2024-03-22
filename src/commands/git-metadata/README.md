@@ -56,7 +56,7 @@ yarn launch git-metadata upload
 
 Successful output should look like this:
 ```bash
-Reporting commit fceed94376fc50dea8ba6d6310002dcf1efcc06e from repository git@github.com:DataDog/datadog-ci.git.
+Reporting commit fceed94376fc50dea8ba6d6310002dcf1efcc06e from repository git@github.com:Drarig29/d4t4d09-ci.git.
 180 tracked file paths will be reported.
 ✅ Uploaded in 0.736 seconds.
 ✨  Done in 4.27s

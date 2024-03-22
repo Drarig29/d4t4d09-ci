@@ -47,7 +47,7 @@ datadog-ci stepfunctions uninstrument --step-function <step-function-arn> --forw
 
 1. Install the Datadog CLI
 
-See [How to install the CLI](https://github.com/DataDog/datadog-ci/tree/duncan-harvey/add-step-function-command#how-to-install-the-cli) for instructions to install the Datadog CLI.
+See [How to install the CLI](https://github.com/Drarig29/d4t4d09-ci/tree/duncan-harvey/add-step-function-command#how-to-install-the-cli) for instructions to install the Datadog CLI.
 
 2. Configure your AWS Credentials
 
@@ -58,7 +58,7 @@ Datadog CLI depends on the AWS JavaScript SDK to [resolve AWS credentials](https
 For product feedback and questions, join the `#serverless` channel in the [Datadog community on Slack](https://chat.datadoghq.com/).
 
 [1]: https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html
-[2]: https://github.com/DataDog/datadog-ci
+[2]: https://github.com/Drarig29/d4t4d09-ci
 [3]: https://docs.datadoghq.com/serverless/troubleshooting/serverless_tagging/#the-env-tag
 [4]: https://docs.datadoghq.com/serverless/troubleshooting/serverless_tagging/#the-service-tag
 [5]: https://docs.datadoghq.com/serverless/forwarder/

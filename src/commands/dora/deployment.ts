@@ -74,7 +74,7 @@ export class SendDeploymentEvent extends Command {
 
   private gitInfo?: GitInfo
   private gitRepoURL = Option.String('--git-repository-url', {
-    description: 'Example: https://github.com/DataDog/datadog-ci.git',
+    description: 'Example: https://github.com/Drarig29/d4t4d09-ci.git',
   })
   private gitCommitSHA = Option.String('--git-commit-sha', {
     description: 'Example: 102836a25f5477e571c73d489b3f0f183687068e',
