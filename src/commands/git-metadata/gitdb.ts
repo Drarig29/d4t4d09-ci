@@ -6,14 +6,13 @@ import path from 'path'
 
 import type {AxiosResponse} from 'axios'
 
+import {getDefaultRemoteName, gitRemote as getRepoURL} from '@drarig29/d4t4d09-ci-core/dist/helpers/git/get-git-data'
+import {RequestBuilder} from '@drarig29/d4t4d09-ci-core/dist/helpers/interfaces'
+import {Logger} from '@drarig29/d4t4d09-ci-core/dist/helpers/logger'
+import {retryRequest} from '@drarig29/d4t4d09-ci-core/dist/helpers/retry'
 import FormData from 'form-data'
 import {lte} from 'semver'
 import * as simpleGit from 'simple-git'
-
-import {getDefaultRemoteName, gitRemote as getRepoURL} from '../../helpers/git/get-git-data'
-import {RequestBuilder} from '../../helpers/interfaces'
-import {Logger} from '../../helpers/logger'
-import {retryRequest} from '../../helpers/retry'
 
 const API_TIMEOUT = 15000
 

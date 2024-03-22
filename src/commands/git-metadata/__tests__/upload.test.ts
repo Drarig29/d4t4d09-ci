@@ -1,8 +1,7 @@
 import os from 'os'
 
+import {createMockContext} from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
 import {Cli} from 'clipanion/lib/advanced'
-
-import {createMockContext} from '../../../helpers/__tests__/fixtures'
 
 import {UploadCommand} from '../upload'
 

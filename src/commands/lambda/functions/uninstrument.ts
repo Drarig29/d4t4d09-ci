@@ -5,8 +5,13 @@ import {
   Runtime,
   UpdateFunctionConfigurationRequest,
 } from '@aws-sdk/client-lambda'
-
-import {API_KEY_ENV_VAR, ENVIRONMENT_ENV_VAR, SERVICE_ENV_VAR, SITE_ENV_VAR, VERSION_ENV_VAR} from '../../../constants'
+import {
+  API_KEY_ENV_VAR,
+  ENVIRONMENT_ENV_VAR,
+  SERVICE_ENV_VAR,
+  SITE_ENV_VAR,
+  VERSION_ENV_VAR,
+} from '@drarig29/d4t4d09-ci-core/dist/constants'
 
 import {
   API_KEY_SECRET_ARN_ENV_VAR,

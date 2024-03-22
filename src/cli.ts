@@ -1,9 +1,8 @@
 import fs from 'fs'
 
+import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
 import {Builtins, Cli} from 'clipanion'
 import {CommandClass} from 'clipanion/lib/advanced/Command'
-
-import {version} from './helpers/version'
 
 export const BETA_COMMANDS = ['dora', 'deployment']
 
@@ -23,6 +22,9 @@ const cli = new Cli({
 
 cli.register(Builtins.HelpCommand)
 cli.register(Builtins.VersionCommand)
+
+cli.register(require('@drarig29/d4t4d09-ci-plugin-synthetics/dist/cli')[0])
+cli.register(require('@drarig29/d4t4d09-ci-plugin-synthetics/dist/cli')[1])
 
 const commandsPath = `${__dirname}/commands`
 for (const commandFolder of fs.readdirSync(commandsPath)) {

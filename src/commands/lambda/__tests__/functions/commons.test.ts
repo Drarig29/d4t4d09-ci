@@ -7,11 +7,11 @@ import * as fs from 'fs'
 import {CloudWatchLogsClient} from '@aws-sdk/client-cloudwatch-logs'
 import {Architecture, LambdaClient, Runtime, UpdateFunctionConfigurationCommand} from '@aws-sdk/client-lambda'
 import {fromNodeProviderChain} from '@aws-sdk/credential-providers'
+import {API_KEY_ENV_VAR, CI_API_KEY_ENV_VAR, CI_SITE_ENV_VAR} from '@drarig29/d4t4d09-ci-core/dist/constants'
+import {createCommand} from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
 import {mockClient} from 'aws-sdk-client-mock'
 
 import 'aws-sdk-client-mock-jest'
-import {API_KEY_ENV_VAR, CI_API_KEY_ENV_VAR, CI_SITE_ENV_VAR} from '../../../../constants'
-import {createCommand} from '../../../../helpers/__tests__/fixtures'
 
 import {
   CI_API_KEY_SECRET_ARN_ENV_VAR,

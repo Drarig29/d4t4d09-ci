@@ -5,26 +5,29 @@ jest.mock('@aws-sdk/credential-providers', () => ({
 }))
 jest.mock('../prompt')
 jest.mock('../renderers/instrument-uninstrument-renderer')
-jest.mock('../../../helpers/prompt')
+jest.mock('@drarig29/d4t4d09-ci-core/dist/helpers/prompt')
 jest.mock('../../../../package.json', () => ({version: 'XXXX'}))
 
 import * as fs from 'fs'
 
 import {LambdaClient, ListFunctionsCommand, UpdateFunctionConfigurationCommand} from '@aws-sdk/client-lambda'
 import {fromIni} from '@aws-sdk/credential-providers'
-import {mockClient} from 'aws-sdk-client-mock'
-import 'aws-sdk-client-mock-jest'
-import {Cli} from 'clipanion/lib/advanced'
-
 import {
   CI_API_KEY_ENV_VAR,
   CI_SITE_ENV_VAR,
   ENVIRONMENT_ENV_VAR,
   SERVICE_ENV_VAR,
   VERSION_ENV_VAR,
-} from '../../../constants'
-import {createCommand, createMockContext, MOCK_DATADOG_API_KEY} from '../../../helpers/__tests__/fixtures'
-import {requestConfirmation} from '../../../helpers/prompt'
+} from '@drarig29/d4t4d09-ci-core/dist/constants'
+import {
+  createCommand,
+  createMockContext,
+  MOCK_DATADOG_API_KEY,
+} from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
+import {requestConfirmation} from '@drarig29/d4t4d09-ci-core/dist/helpers/prompt'
+import {mockClient} from 'aws-sdk-client-mock'
+import 'aws-sdk-client-mock-jest'
+import {Cli} from 'clipanion/lib/advanced'
 
 import {
   AWS_ACCESS_KEY_ID_ENV_VAR,

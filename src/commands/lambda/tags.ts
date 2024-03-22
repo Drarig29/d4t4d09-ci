@@ -7,8 +7,7 @@ import {
   UntagResourceCommand,
   ListTagsCommand,
 } from '@aws-sdk/client-lambda'
-
-import {version} from '../../helpers/version'
+import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
 
 import {TAG_VERSION_NAME} from './constants'
 import {TagConfiguration} from './interfaces'

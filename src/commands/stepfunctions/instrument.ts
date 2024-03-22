@@ -1,9 +1,8 @@
 import {CloudWatchLogsClient} from '@aws-sdk/client-cloudwatch-logs'
 import {IAMClient} from '@aws-sdk/client-iam'
 import {SFNClient} from '@aws-sdk/client-sfn'
+import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
 import {Command, Option} from 'clipanion'
-
-import {version} from '../../helpers/version'
 
 import {
   createLogGroup,

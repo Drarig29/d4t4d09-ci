@@ -1,5 +1,5 @@
-import {createCommand} from '../../../../helpers/__tests__/fixtures'
-import * as ciUtils from '../../../../helpers/utils'
+import {createCommand} from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
+import * as ciUtils from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
 
 import {DEFAULT_POLLING_TIMEOUT, RunTestsCommand} from '../../run-tests-command'
 import * as utils from '../../utils/public'

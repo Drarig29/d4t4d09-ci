@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "license": "Apache-2.0",
   "bin": "dist/cli.js",
+  "private": true,
   "engines": {
     "node": ">=14"
   },
@@ -11,6 +12,9 @@
     "yarn": "3.4.1"
   },
   "packageManager": "yarn@3.4.1",
+  "workspaces": [
+    "packages/*"
+  ],
   "files": [
     "dist/**/*",
     "README",
@@ -37,8 +41,8 @@
     ]
   },
   "scripts": {
-    "build": "yarn clean; tsc",
-    "build:win": "tsc",
+    "build": "yarn clean; tsc --build",
+    "build:win": "tsc --build",
     "check-licenses": "node bin/check-licenses.js",
     "check-junit-upload": "node bin/check-junit-upload.js",
     "clean:win": "rm dist -r",
@@ -68,6 +72,8 @@
     "@aws-sdk/client-lambda": "^3.454.0",
     "@aws-sdk/client-sfn": "^3.454.0",
     "@aws-sdk/credential-providers": "^3.454.0",
+    "@drarig29/d4t4d09-ci-core": "workspace:^",
+    "@drarig29/d4t4d09-ci-plugin-synthetics": "workspace:^",
     "@google-cloud/logging": "^11.0.0",
     "@google-cloud/run": "^1.0.2",
     "@smithy/property-provider": "^2.0.12",

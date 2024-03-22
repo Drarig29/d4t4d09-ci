@@ -1,4 +1,4 @@
-import {renderError, renderSoftWarning} from '../../../helpers/renderer'
+import {renderError, renderSoftWarning} from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
 
 /**
  * @returns a message indicating that no default region has been specified.

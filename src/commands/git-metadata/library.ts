@@ -1,11 +1,10 @@
+import {newApiKeyValidator} from '@drarig29/d4t4d09-ci-core/dist/helpers/apikey'
+import {RequestBuilder} from '@drarig29/d4t4d09-ci-core/dist/helpers/interfaces'
+import {Logger, LogLevel} from '@drarig29/d4t4d09-ci-core/dist/helpers/logger'
+import {upload, UploadOptions, UploadStatus} from '@drarig29/d4t4d09-ci-core/dist/helpers/upload'
+import {getRequestBuilder, filterAndFormatGithubRemote} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
 import {SimpleGit} from 'simple-git'
-
-import {newApiKeyValidator} from '../../helpers/apikey'
-import {RequestBuilder} from '../../helpers/interfaces'
-import {Logger, LogLevel} from '../../helpers/logger'
-import {upload, UploadOptions, UploadStatus} from '../../helpers/upload'
-import {getRequestBuilder, filterAndFormatGithubRemote} from '../../helpers/utils'
-import {version} from '../../helpers/version'
 
 import {getCommitInfo, newSimpleGit} from './git'
 import {uploadToGitDB} from './gitdb'

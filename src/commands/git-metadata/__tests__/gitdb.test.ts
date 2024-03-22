@@ -4,11 +4,10 @@ import fspromises from 'fs/promises'
 import os from 'os'
 import path from 'path'
 
+import {Logger, LogLevel} from '@drarig29/d4t4d09-ci-core/dist/helpers/logger'
+import {getRequestBuilder} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
 import {default as axios} from 'axios'
 import * as simpleGit from 'simple-git'
-
-import {Logger, LogLevel} from '../../../helpers/logger'
-import {getRequestBuilder} from '../../../helpers/utils'
 
 import {uploadToGitDB} from '../gitdb'
 

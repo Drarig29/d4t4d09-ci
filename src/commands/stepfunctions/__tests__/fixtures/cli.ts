@@ -1,6 +1,6 @@
 import {Writable} from 'stream'
 
-import type {CommandContext} from '../../../../helpers/interfaces'
+import type {CommandContext} from '@drarig29/d4t4d09-ci-core/dist/helpers/interfaces'
 
 export interface ContextFixture extends CommandContext {
   toString: () => string

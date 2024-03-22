@@ -1,5 +1,5 @@
-import {Metadata} from '../../helpers/interfaces'
-import {ProxyConfiguration} from '../../helpers/utils'
+import {Metadata} from '@drarig29/d4t4d09-ci-core/dist/helpers/interfaces'
+import {ProxyConfiguration} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
 
 import {TunnelInfo} from './tunnel'
 

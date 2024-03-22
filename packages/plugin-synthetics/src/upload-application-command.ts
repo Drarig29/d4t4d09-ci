@@ -2,8 +2,8 @@ import {Command, Option} from 'clipanion'
 import deepExtend from 'deep-extend'
 import terminalLink from 'terminal-link'
 
-import {LogLevel, Logger} from '../../helpers/logger'
-import {removeUndefinedValues, resolveConfigFromFile} from '../../helpers/utils'
+import {LogLevel, Logger} from '@drarig29/d4t4d09-ci-core/dist/helpers/logger'
+import {removeUndefinedValues, resolveConfigFromFile} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
 
 import {EndpointError} from './api'
 import {CiError, CriticalError} from './errors'

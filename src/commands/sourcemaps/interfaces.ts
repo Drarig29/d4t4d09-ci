@@ -1,4 +1,4 @@
-import {MultipartPayload, MultipartValue} from '../../helpers/upload'
+import {MultipartPayload, MultipartValue} from '@drarig29/d4t4d09-ci-core/dist/helpers/upload'
 
 export class Sourcemap {
   public gitData?: GitData

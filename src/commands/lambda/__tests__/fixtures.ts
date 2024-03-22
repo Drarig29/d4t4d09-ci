@@ -29,10 +29,9 @@ import {
   ServiceOutputTypes,
   ListTagsCommandOutput,
 } from '@aws-sdk/client-lambda'
+import {MOCK_DATADOG_API_KEY} from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
 import {AwsStub} from 'aws-sdk-client-mock'
 import {Cli} from 'clipanion/lib/advanced'
-
-import {MOCK_DATADOG_API_KEY} from '../../../helpers/__tests__/fixtures'
 
 import {LambdaFlareCommand} from '../flare'
 import {InstrumentCommand} from '../instrument'

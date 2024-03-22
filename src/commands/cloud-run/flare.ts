@@ -5,13 +5,6 @@ import path from 'path'
 import process from 'process'
 import util from 'util'
 
-import {Logging} from '@google-cloud/logging'
-import {RevisionsClient, ServicesClient} from '@google-cloud/run'
-import {google} from '@google-cloud/run/build/protos/protos'
-import chalk from 'chalk'
-import {Command, Option} from 'clipanion'
-import {GoogleAuth} from 'google-auth-library'
-
 import {
   ADDITIONAL_FILES_DIRECTORY,
   API_KEY_ENV_VAR,
@@ -21,14 +14,25 @@ import {
   INSIGHTS_FILE_NAME,
   LOGS_DIRECTORY,
   PROJECT_FILES_DIRECTORY,
-} from '../../constants'
-import {getProjectFiles, sendToDatadog, validateFilePath, validateStartEndFlags} from '../../helpers/flare'
-import {createDirectories, deleteFolder, writeFile, zipContents} from '../../helpers/fs'
-import {requestConfirmation, requestFilePath} from '../../helpers/prompt'
-import * as helpersRenderer from '../../helpers/renderer'
-import {renderAdditionalFiles, renderProjectFiles} from '../../helpers/renderer'
-import {formatBytes, maskString} from '../../helpers/utils'
-import {version} from '../../helpers/version'
+} from '@drarig29/d4t4d09-ci-core/dist/constants'
+import {
+  getProjectFiles,
+  sendToDatadog,
+  validateFilePath,
+  validateStartEndFlags,
+} from '@drarig29/d4t4d09-ci-core/dist/helpers/flare'
+import {createDirectories, deleteFolder, writeFile, zipContents} from '@drarig29/d4t4d09-ci-core/dist/helpers/fs'
+import {requestConfirmation, requestFilePath} from '@drarig29/d4t4d09-ci-core/dist/helpers/prompt'
+import * as helpersRenderer from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
+import {renderAdditionalFiles, renderProjectFiles} from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
+import {formatBytes, maskString} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
+import {Logging} from '@google-cloud/logging'
+import {RevisionsClient, ServicesClient} from '@google-cloud/run'
+import {google} from '@google-cloud/run/build/protos/protos'
+import chalk from 'chalk'
+import {Command, Option} from 'clipanion'
+import {GoogleAuth} from 'google-auth-library'
 
 import {getUniqueFileNames} from '../lambda/flare'
 

@@ -1,8 +1,7 @@
+import {ICONS} from '@drarig29/d4t4d09-ci-core/dist/helpers/formatting'
+import {UploadStatus} from '@drarig29/d4t4d09-ci-core/dist/helpers/upload'
+import {pluralize} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
 import chalk from 'chalk'
-
-import {ICONS} from '../../helpers/formatting'
-import {UploadStatus} from '../../helpers/upload'
-import {pluralize} from '../../helpers/utils'
 
 import {Sourcemap} from './interfaces'
 
