@@ -42,7 +42,7 @@
   },
   "scripts": {
     "build": "yarn clean; tsc --build",
-    "build:plugins": "yarn workspaces foreach --verbose --parallel --exclude @drarig29/d4t4d09-ci run build",
+    "build:plugins": "yarn workspaces foreach --verbose --exclude @drarig29/d4t4d09-ci run build",
     "build:win": "tsc --build",
     "check-licenses": "node bin/check-licenses.js",
     "check-junit-upload": "node bin/check-junit-upload.js",

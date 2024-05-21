@@ -5,6 +5,8 @@ import {Builtins, Cli} from 'clipanion'
 import {CommandClass} from 'clipanion/lib/advanced/Command'
 import createDebug from 'debug'
 
+import {getDynamicLibs} from './dynamic-libs'
+
 const debug = createDebug('cli')
 
 const [command] = process.argv.slice(2)
@@ -44,6 +46,30 @@ for (const commandFolder of fs.readdirSync(commandsPath)) {
   if (fs.statSync(commandPath).isDirectory()) {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     ;(require(`${commandPath}/cli`) as CommandClass[]).forEach((cmd) => cli.register(cmd))
+  }
+}
+
+const yarnPlugin = require('/Users/corentin.girard/playground/example-plugin/bundles/@yarnpkg/plugin-example.js')
+
+const dynamicLibs = getDynamicLibs()
+
+const pluginRequire = (path: string): unknown => {
+  if (dynamicLibs.has(path)) {
+    return dynamicLibs.get(path)
+  }
+
+  return require(path)
+}
+
+// XXX: support async factories (paving the road for ESM)
+// See https://github.com/yarnpkg/berry/blob/bfa6489467e0e11ee87268e01e38e4f7e8d4d4b0/packages/yarnpkg-core/sources/Configuration.ts#L1271-L1300
+// About checksums: https://github.com/yarnpkg/berry/blob/bfa6489467e0e11ee87268e01e38e4f7e8d4d4b0/packages/yarnpkg-core/sources/Configuration.ts#L1345-L1351
+const plugin = yarnPlugin.factory(pluginRequire).default
+
+for (const cmd of plugin.commands ?? []) {
+  cli.register(cmd)
+  for (const path of cmd.paths) {
+    loadedCommands.add(path[0])
   }
 }
 
