@@ -1,10 +1,16 @@
 {
   "name": "@drarig29/d4t4d09-ci-plugin-synthetics",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/cli.js",
+  "types": "dist/cli.d.ts",
   "private": true,
+  "scripts": {
+    "build": "esbuild --platform=node --external:cpu-features --bundle ./src/cli.js --outdir=dist"
+  },
   "dependencies": {
     "@drarig29/d4t4d09-ci-core": "workspace:^",
     "clipanion": "^3.2.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.3"
   }
 }

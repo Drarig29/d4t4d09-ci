@@ -1,8 +1,11 @@
 {
   "name": "@drarig29/d4t4d09-ci-plugin-cloud-run",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/cli.js",
+  "types": "dist/cli.d.ts",
   "private": true,
+  "scripts": {
+    "build": "esbuild --platform=node --bundle ./src/cli.js --minify --outdir=dist"
+  },
   "dependencies": {
     "@drarig29/d4t4d09-ci-core": "workspace:^",
     "@google-cloud/logging": "^11.0.0",
@@ -10,5 +13,8 @@
     "chalk": "3.0.0",
     "clipanion": "^3.2.1",
     "google-auth-library": "^8.9.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.3"
   }
 }

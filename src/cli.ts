@@ -3,6 +3,11 @@ import fs from 'fs'
 import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
 import {Builtins, Cli} from 'clipanion'
 import {CommandClass} from 'clipanion/lib/advanced/Command'
+import createDebug from 'debug'
+
+const debug = createDebug('cli')
+
+const [command] = process.argv.slice(2)
 
 export const BETA_COMMANDS = ['dora', 'deployment']
 
@@ -26,6 +31,8 @@ cli.register(Builtins.VersionCommand)
 cli.register(require('@drarig29/d4t4d09-ci-plugin-synthetics/dist/cli')[0])
 cli.register(require('@drarig29/d4t4d09-ci-plugin-synthetics/dist/cli')[1])
 
+const loadedCommands: Set<string> = new Set()
+
 const commandsPath = `${__dirname}/commands`
 for (const commandFolder of fs.readdirSync(commandsPath)) {
   const betaCommandsEnabled =
@@ -36,8 +43,13 @@ for (const commandFolder of fs.readdirSync(commandsPath)) {
   const commandPath = `${commandsPath}/${commandFolder}`
   if (fs.statSync(commandPath).isDirectory()) {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    ;(require(`${commandPath}/cli`) as CommandClass[]).forEach((command) => cli.register(command))
+    ;(require(`${commandPath}/cli`) as CommandClass[]).forEach((cmd) => cli.register(cmd))
   }
+}
+
+if (command && !loadedCommands.has(command)) {
+  debug(`Loading plugin ${command}`)
+  cli.register(require(`@drarig29/d4t4d09-ci-plugin-${command}/dist/cli`)[0])
 }
 
 if (require.main === module) {
