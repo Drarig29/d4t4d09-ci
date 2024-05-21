@@ -30,10 +30,12 @@ const cli = new Cli({
 cli.register(Builtins.HelpCommand)
 cli.register(Builtins.VersionCommand)
 
+const loadedCommands: Set<string> = new Set()
+
 cli.register(require('@drarig29/d4t4d09-ci-plugin-synthetics/dist/cli')[0])
 cli.register(require('@drarig29/d4t4d09-ci-plugin-synthetics/dist/cli')[1])
 
-const loadedCommands: Set<string> = new Set()
+loadedCommands.add('synthetics')
 
 const commandsPath = `${__dirname}/commands`
 for (const commandFolder of fs.readdirSync(commandsPath)) {
@@ -45,7 +47,12 @@ for (const commandFolder of fs.readdirSync(commandsPath)) {
   const commandPath = `${commandsPath}/${commandFolder}`
   if (fs.statSync(commandPath).isDirectory()) {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    ;(require(`${commandPath}/cli`) as CommandClass[]).forEach((cmd) => cli.register(cmd))
+    ;(require(`${commandPath}/cli`) as CommandClass[]).forEach((cmd) => {
+      cli.register(cmd)
+      for (const path of cmd.paths ?? []) {
+        loadedCommands.add(path[0])
+      }
+    })
   }
 }
 
