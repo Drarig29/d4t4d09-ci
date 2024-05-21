@@ -1,0 +1,14 @@
+{
+  "name": "@drarig29/d4t4d09-ci-plugin-cloud-run",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "dependencies": {
+    "@drarig29/d4t4d09-ci-core": "workspace:^",
+    "@google-cloud/logging": "^11.0.0",
+    "@google-cloud/run": "^1.0.2",
+    "chalk": "3.0.0",
+    "clipanion": "^3.2.1",
+    "google-auth-library": "^8.9.0"
+  }
+}

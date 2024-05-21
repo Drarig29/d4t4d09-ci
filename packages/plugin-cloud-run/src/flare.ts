@@ -15,6 +15,7 @@ import {
   LOGS_DIRECTORY,
   PROJECT_FILES_DIRECTORY,
 } from '@drarig29/d4t4d09-ci-core/dist/constants'
+import {getUniqueFileNames} from '@drarig29/d4t4d09-ci-core/dist/helpers/filename'
 import {
   getProjectFiles,
   sendToDatadog,
@@ -33,8 +34,6 @@ import {google} from '@google-cloud/run/build/protos/protos'
 import chalk from 'chalk'
 import {Command, Option} from 'clipanion'
 import {GoogleAuth} from 'google-auth-library'
-
-import {getUniqueFileNames} from '../lambda/flare'
 
 import {SKIP_MASKING_CLOUDRUN_ENV_VARS} from './constants'
 import {CloudRunLog, LogConfig} from './interfaces'

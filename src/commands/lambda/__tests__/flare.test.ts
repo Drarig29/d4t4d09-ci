@@ -17,6 +17,7 @@ import {
   MOCK_DATADOG_API_KEY,
   MOCK_FLARE_FOLDER_PATH,
 } from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
+import {getUniqueFileNames} from '@drarig29/d4t4d09-ci-core/dist/helpers/filename'
 import * as helpersFlareModule from '@drarig29/d4t4d09-ci-core/dist/helpers/flare'
 import * as fsModule from '@drarig29/d4t4d09-ci-core/dist/helpers/fs'
 import * as helpersPromptModule from '@drarig29/d4t4d09-ci-core/dist/helpers/prompt'
@@ -31,7 +32,6 @@ import {
   getLogEvents,
   getLogStreamNames,
   getTags,
-  getUniqueFileNames,
   summarizeConfig,
 } from '../flare'
 import * as flareModule from '../flare'
