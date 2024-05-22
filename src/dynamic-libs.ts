@@ -8,11 +8,11 @@ import * as typanion from 'typanion'
 
 export const getDynamicLibs = () =>
   new Map<string, any>([
-    [`@d4t4d09-ci/core`, core],
+    ['@d4t4d09-ci/core', core],
 
     // Those ones are always useful
-    [`clipanion`, clipanion],
-    [`chalk`, chalk],
-    [`semver`, semver],
-    [`typanion`, typanion],
+    ['clipanion', clipanion],
+    ['chalk', chalk],
+    ['semver', semver],
+    ['typanion', typanion],
   ])

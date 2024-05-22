@@ -33,3 +33,18 @@ index 5a3b4099286bd8e0c768fa2d9ac287886c922e46..3348c84924e9446251e2b2769e73a038
                      bundle: true,
                      outfile: fslib_1.npath.fromPortablePath(output),
                      metafile: metafile !== false,
+diff --git a/lib/tools/isDynamicLib.js b/lib/tools/isDynamicLib.js
+index c18327a1e4c7a951736cd47c417d5f1cfa8d6e26..4b5a1296d314d6588be04b4ec5eef25deb8d6c57 100644
+--- a/lib/tools/isDynamicLib.js
++++ b/lib/tools/isDynamicLib.js
+@@ -3,9 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.isDynamicLib = void 0;
+ const cli_1 = require("@yarnpkg/cli");
+ const isDynamicLib = (request) => {
+-    if ((0, cli_1.getDynamicLibs)().has(request))
+-        return true;
+-    if (request.match(/^@yarnpkg\/plugin-/))
++    if (['@d4t4d09-ci/core', 'clipanion', 'chalk', 'semver', 'typanion'].includes(request))
+         return true;
+     return false;
+ };
