@@ -90,4 +90,4 @@ src/commands/react-native/__tests__/fixtures/with-sources-content/main.jsbundle.
 
 *.tsbuildinfo
 
-plugin-*.js
+packages/*/bundles
