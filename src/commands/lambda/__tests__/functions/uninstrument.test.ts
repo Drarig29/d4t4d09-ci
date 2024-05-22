@@ -9,7 +9,7 @@ import {
   SERVICE_ENV_VAR,
   SITE_ENV_VAR,
   VERSION_ENV_VAR,
-} from '@drarig29/d4t4d09-ci-core/dist/constants'
+} from '@d4t4d09-ci/core/dist/constants'
 import {mockClient} from 'aws-sdk-client-mock'
 
 import 'aws-sdk-client-mock-jest'

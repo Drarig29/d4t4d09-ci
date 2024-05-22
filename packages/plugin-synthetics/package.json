@@ -1,16 +1,16 @@
 {
-  "name": "@drarig29/d4t4d09-ci-plugin-synthetics",
-  "main": "dist/cli.js",
-  "types": "dist/cli.d.ts",
+  "name": "@d4t4d09-ci/plugin-synthetics",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "private": true,
   "scripts": {
-    "build": "esbuild --platform=node --external:cpu-features --bundle ./src/cli.js --outdir=dist"
+    "build": "builder build plugin"
   },
   "dependencies": {
-    "@drarig29/d4t4d09-ci-core": "workspace:^",
+    "@d4t4d09-ci/core": "workspace:^",
     "clipanion": "^3.2.1"
   },
   "devDependencies": {
-    "esbuild": "^0.21.3"
+    "@yarnpkg/builder": "patch:@yarnpkg/builder@npm%3A4.1.1#../../.yarn/patches/@yarnpkg-builder-npm-4.1.1-abb47d5979.patch"
   }
 }

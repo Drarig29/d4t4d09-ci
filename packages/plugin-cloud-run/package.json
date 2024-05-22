@@ -1,13 +1,13 @@
 {
-  "name": "@drarig29/d4t4d09-ci-plugin-cloud-run",
-  "main": "dist/cli.js",
-  "types": "dist/cli.d.ts",
+  "name": "@d4t4d09-ci/plugin-cloud-run",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "private": true,
   "scripts": {
-    "build": "esbuild --platform=node --bundle ./src/cli.js --minify --outdir=dist"
+    "build": "builder build plugin"
   },
   "dependencies": {
-    "@drarig29/d4t4d09-ci-core": "workspace:^",
+    "@d4t4d09-ci/core": "workspace:^",
     "@google-cloud/logging": "^11.0.0",
     "@google-cloud/run": "^1.0.2",
     "chalk": "3.0.0",
@@ -15,6 +15,6 @@
     "google-auth-library": "^8.9.0"
   },
   "devDependencies": {
-    "esbuild": "^0.21.3"
+    "@yarnpkg/builder": "patch:@yarnpkg/builder@npm%3A4.1.1#../../.yarn/patches/@yarnpkg-builder-npm-4.1.1-abb47d5979.patch"
   }
 }

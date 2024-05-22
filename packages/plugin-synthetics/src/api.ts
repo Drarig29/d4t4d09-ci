@@ -4,7 +4,7 @@ import type {AxiosError, AxiosPromise, AxiosRequestConfig} from 'axios'
 
 import {isAxiosError} from 'axios'
 
-import {getRequestBuilder} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import {getRequestBuilder} from '@d4t4d09-ci/core/dist/helpers/utils'
 
 import {CriticalError} from './errors'
 import {

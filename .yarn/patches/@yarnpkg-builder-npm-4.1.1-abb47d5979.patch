@@ -1,0 +1,35 @@
+diff --git a/lib/commands/build/plugin.js b/lib/commands/build/plugin.js
+index 5a3b4099286bd8e0c768fa2d9ac287886c922e46..3348c84924e9446251e2b2769e73a03864c86519 100644
+--- a/lib/commands/build/plugin.js
++++ b/lib/commands/build/plugin.js
+@@ -13,13 +13,13 @@ const matchAll = /()/;
+ // Splits a require request into its components, or return null if the request is a file path
+ const pathRegExp = /^(?![a-zA-Z]:[\\/]|\\\\|\.{0,2}(?:\/|$))((?:@[^/]+\/)?[^/]+)\/*(.*|)$/;
+ // The name gets normalized so that everyone can override some plugins by
+-// their own (@arcanis/yarn-plugin-foo would override @yarnpkg/plugin-foo
+-// as well as @mael/yarn-plugin-foo)
++// their own (@arcanis/datadog-ci-plugin-foo would override @d4t4d09-ci/plugin-foo
++// as well as @mael/datadog-ci-plugin-foo)
+ const getNormalizedName = (name) => {
+-    const parsing = name.match(/^(?:@yarnpkg\/|(?:@[^/]+\/)?yarn-)(plugin-[^/]+)/);
++    const parsing = name.match(/^(?:@d4t4d09-ci\/|(?:@[^/]+\/)?datadog-ci-)(plugin-[^/]+)/);
+     if (parsing === null)
+-        throw new clipanion_1.UsageError(`Invalid plugin name "${name}" - it should be "yarn-plugin-<something>"`);
+-    return `@yarnpkg/${parsing[1]}`;
++        throw new clipanion_1.UsageError(`Invalid plugin name "${name}" - it should be "datadog-ci-plugin-<something>"`);
++    return `@d4t4d09-ci/${parsing[1]}`;
+ };
+ // eslint-disable-next-line arca/no-default-export
+ class BuildPluginCommand extends clipanion_1.Command {
+@@ -86,7 +86,10 @@ class BuildPluginCommand extends clipanion_1.Command {
+                             `};`,
+                         ].join(`\n`),
+                     },
+-                    entryPoints: [path_1.default.resolve(basedir, main ?? `sources/index`)],
++                    // Our plugins have a `dist/index.js` file for NPM, because some plugins need to export some logic.
++                    // The exported `Plugin` factory is meant to be a separate entrypoint, minimized with `esbuild`.
++                    entryPoints: [path_1.default.resolve(basedir, `src/cli`)],
++                    external: ['cpu-features'],
+                     bundle: true,
+                     outfile: fslib_1.npath.fromPortablePath(output),
+                     metafile: metafile !== false,

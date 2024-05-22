@@ -5,7 +5,7 @@ jest.mock('@aws-sdk/credential-providers', () => ({
 }))
 jest.mock('../prompt')
 jest.mock('../renderers/instrument-uninstrument-renderer')
-jest.mock('@drarig29/d4t4d09-ci-core/dist/helpers/prompt')
+jest.mock('@d4t4d09-ci/core/dist/helpers/prompt')
 jest.mock('../../../../package.json', () => ({version: 'XXXX'}))
 
 import * as fs from 'fs'
@@ -17,14 +17,9 @@ import {
   UpdateFunctionConfigurationCommand,
 } from '@aws-sdk/client-lambda'
 import {fromIni} from '@aws-sdk/credential-providers'
-import {
-  ENVIRONMENT_ENV_VAR,
-  SERVICE_ENV_VAR,
-  SITE_ENV_VAR,
-  VERSION_ENV_VAR,
-} from '@drarig29/d4t4d09-ci-core/dist/constants'
-import {createCommand, createMockContext} from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
-import {requestConfirmation} from '@drarig29/d4t4d09-ci-core/dist/helpers/prompt'
+import {ENVIRONMENT_ENV_VAR, SERVICE_ENV_VAR, SITE_ENV_VAR, VERSION_ENV_VAR} from '@d4t4d09-ci/core/dist/constants'
+import {createCommand, createMockContext} from '@d4t4d09-ci/core/dist/helpers/__tests__/fixtures'
+import {requestConfirmation} from '@d4t4d09-ci/core/dist/helpers/prompt'
 import {mockClient} from 'aws-sdk-client-mock'
 
 import 'aws-sdk-client-mock-jest'

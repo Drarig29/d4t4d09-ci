@@ -48,9 +48,9 @@ import glob from 'glob'
 
 process.env.DATADOG_SYNTHETICS_CI_TRIGGER_APP = 'env_default'
 
-import * as ciHelpers from '@drarig29/d4t4d09-ci-core/dist/helpers/ci'
-import {Metadata} from '@drarig29/d4t4d09-ci-core/dist/helpers/interfaces'
-import * as ciUtils from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import * as ciHelpers from '@d4t4d09-ci/core/dist/helpers/ci'
+import {Metadata} from '@d4t4d09-ci/core/dist/helpers/interfaces'
+import * as ciUtils from '@d4t4d09-ci/core/dist/helpers/utils'
 
 import {apiConstructor, APIHelper} from '../../api'
 import {CiError, CiErrorCode, CriticalError} from '../../errors'

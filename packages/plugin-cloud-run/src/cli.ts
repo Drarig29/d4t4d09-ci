@@ -1,3 +1,9 @@
+import {Plugin} from '@d4t4d09-ci/core'
+
 import {CloudRunFlareCommand} from './flare'
 
-module.exports = [CloudRunFlareCommand]
+const plugin: Plugin = {
+  commands: [CloudRunFlareCommand],
+}
+
+export default plugin

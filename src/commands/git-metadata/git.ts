@@ -1,6 +1,6 @@
 import {URL} from 'url'
 
-import {gitRemote} from '@drarig29/d4t4d09-ci-core/dist/helpers/git/get-git-data'
+import {gitRemote} from '@d4t4d09-ci/core/dist/helpers/git/get-git-data'
 import * as simpleGit from 'simple-git'
 
 import {CommitInfo} from './interfaces'

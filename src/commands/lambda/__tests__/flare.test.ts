@@ -10,17 +10,17 @@ import {
   OutputLogEvent,
 } from '@aws-sdk/client-cloudwatch-logs'
 import {LambdaClient, ListTagsCommand} from '@aws-sdk/client-lambda'
-import {API_KEY_ENV_VAR, CI_API_KEY_ENV_VAR} from '@drarig29/d4t4d09-ci-core/dist/constants'
+import {API_KEY_ENV_VAR, CI_API_KEY_ENV_VAR} from '@d4t4d09-ci/core/dist/constants'
 import {
   createMockContext,
   MOCK_CWD,
   MOCK_DATADOG_API_KEY,
   MOCK_FLARE_FOLDER_PATH,
-} from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
-import {getUniqueFileNames} from '@drarig29/d4t4d09-ci-core/dist/helpers/filename'
-import * as helpersFlareModule from '@drarig29/d4t4d09-ci-core/dist/helpers/flare'
-import * as fsModule from '@drarig29/d4t4d09-ci-core/dist/helpers/fs'
-import * as helpersPromptModule from '@drarig29/d4t4d09-ci-core/dist/helpers/prompt'
+} from '@d4t4d09-ci/core/dist/helpers/__tests__/fixtures'
+import {getUniqueFileNames} from '@d4t4d09-ci/core/dist/helpers/filename'
+import * as helpersFlareModule from '@d4t4d09-ci/core/dist/helpers/flare'
+import * as fsModule from '@d4t4d09-ci/core/dist/helpers/fs'
+import * as helpersPromptModule from '@d4t4d09-ci/core/dist/helpers/prompt'
 import {mockClient} from 'aws-sdk-client-mock'
 
 import {AWS_DEFAULT_REGION_ENV_VAR, DeploymentFrameworks} from '../constants'

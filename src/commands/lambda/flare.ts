@@ -19,20 +19,20 @@ import {
   INSIGHTS_FILE_NAME,
   LOGS_DIRECTORY,
   PROJECT_FILES_DIRECTORY,
-} from '@drarig29/d4t4d09-ci-core/dist/constants'
-import {getUniqueFileNames} from '@drarig29/d4t4d09-ci-core/dist/helpers/filename'
+} from '@d4t4d09-ci/core/dist/constants'
+import {getUniqueFileNames} from '@d4t4d09-ci/core/dist/helpers/filename'
 import {
   getProjectFiles,
   sendToDatadog,
   validateFilePath,
   validateStartEndFlags,
-} from '@drarig29/d4t4d09-ci-core/dist/helpers/flare'
-import {createDirectories, deleteFolder, writeFile, zipContents} from '@drarig29/d4t4d09-ci-core/dist/helpers/fs'
-import {requestConfirmation, requestFilePath} from '@drarig29/d4t4d09-ci-core/dist/helpers/prompt'
-import * as helpersRenderer from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
-import {renderAdditionalFiles, renderProjectFiles} from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
-import {formatBytes} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
-import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
+} from '@d4t4d09-ci/core/dist/helpers/flare'
+import {createDirectories, deleteFolder, writeFile, zipContents} from '@d4t4d09-ci/core/dist/helpers/fs'
+import {requestConfirmation, requestFilePath} from '@d4t4d09-ci/core/dist/helpers/prompt'
+import * as helpersRenderer from '@d4t4d09-ci/core/dist/helpers/renderer'
+import {renderAdditionalFiles, renderProjectFiles} from '@d4t4d09-ci/core/dist/helpers/renderer'
+import {formatBytes} from '@d4t4d09-ci/core/dist/helpers/utils'
+import {version} from '@d4t4d09-ci/core/dist/helpers/version'
 import chalk from 'chalk'
 import {Command, Option} from 'clipanion'
 

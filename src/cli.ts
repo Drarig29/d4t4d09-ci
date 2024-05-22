@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-import {version} from '@drarig29/d4t4d09-ci-core/dist/helpers/version'
+import {version} from '@d4t4d09-ci/core/dist/helpers/version'
 import {Builtins, Cli} from 'clipanion'
 import {CommandClass} from 'clipanion/lib/advanced/Command'
 import createDebug from 'debug'
@@ -32,11 +32,6 @@ cli.register(Builtins.VersionCommand)
 
 const loadedCommands: Set<string> = new Set()
 
-cli.register(require('@drarig29/d4t4d09-ci-plugin-synthetics/dist/cli')[0])
-cli.register(require('@drarig29/d4t4d09-ci-plugin-synthetics/dist/cli')[1])
-
-loadedCommands.add('synthetics')
-
 const commandsPath = `${__dirname}/commands`
 for (const commandFolder of fs.readdirSync(commandsPath)) {
   const betaCommandsEnabled =
@@ -56,8 +51,6 @@ for (const commandFolder of fs.readdirSync(commandsPath)) {
   }
 }
 
-const yarnPlugin = require('/Users/corentin.girard/playground/example-plugin/bundles/@yarnpkg/plugin-example.js')
-
 const dynamicLibs = getDynamicLibs()
 
 const pluginRequire = (path: string): unknown => {
@@ -68,21 +61,27 @@ const pluginRequire = (path: string): unknown => {
   return require(path)
 }
 
-// XXX: support async factories (paving the road for ESM)
-// See https://github.com/yarnpkg/berry/blob/bfa6489467e0e11ee87268e01e38e4f7e8d4d4b0/packages/yarnpkg-core/sources/Configuration.ts#L1271-L1300
-// About checksums: https://github.com/yarnpkg/berry/blob/bfa6489467e0e11ee87268e01e38e4f7e8d4d4b0/packages/yarnpkg-core/sources/Configuration.ts#L1345-L1351
-const plugin = yarnPlugin.factory(pluginRequire).default
-
-for (const cmd of plugin.commands ?? []) {
-  cli.register(cmd)
-  for (const path of cmd.paths) {
-    loadedCommands.add(path[0])
-  }
-}
-
 if (command && !loadedCommands.has(command)) {
-  debug(`Loading plugin ${command}`)
-  cli.register(require(`@drarig29/d4t4d09-ci-plugin-${command}/dist/cli`)[0])
+  try {
+    cli.register(require(`@d4t4d09-ci/plugin-${command}/dist/cli`)[0])
+    debug(`Plugin ${command} loaded from installed module`)
+  } catch {
+    // TODO: look into `plugins` folder, and `tmp` for already downloaded plugins
+    debug(`Loading ${command} from local file`)
+    const yarnPlugin = require(`../packages/plugin-${command}/bundles/@d4t4d09-ci/plugin-${command}.js`)
+
+    // XXX: support async factories (in order to support ESM out-of-the-box)
+    // See https://github.com/yarnpkg/berry/blob/bfa6489467e0e11ee87268e01e38e4f7e8d4d4b0/packages/yarnpkg-core/sources/Configuration.ts#L1271-L1300
+    // About checksums: https://github.com/yarnpkg/berry/blob/bfa6489467e0e11ee87268e01e38e4f7e8d4d4b0/packages/yarnpkg-core/sources/Configuration.ts#L1345-L1351
+    const plugin = yarnPlugin.factory(pluginRequire).default
+
+    for (const cmd of plugin.commands ?? []) {
+      cli.register(cmd)
+      for (const path of cmd.paths) {
+        loadedCommands.add(path[0])
+      }
+    }
+  }
 }
 
 if (require.main === module) {

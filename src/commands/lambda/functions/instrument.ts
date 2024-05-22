@@ -13,8 +13,8 @@ import {
   SERVICE_ENV_VAR,
   SITE_ENV_VAR,
   VERSION_ENV_VAR,
-} from '@drarig29/d4t4d09-ci-core/dist/constants'
-import {isValidDatadogSite} from '@drarig29/d4t4d09-ci-core/dist/helpers/validation'
+} from '@d4t4d09-ci/core/dist/constants'
+import {isValidDatadogSite} from '@d4t4d09-ci/core/dist/helpers/validation'
 
 import {
   API_KEY_SECRET_ARN_ENV_VAR,

@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-import * as ciUtils from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import * as ciUtils from '@d4t4d09-ci/core/dist/helpers/utils'
 
 import * as api from '../api'
 import {CiError, CriticalCiErrorCode, CriticalError} from '../errors'

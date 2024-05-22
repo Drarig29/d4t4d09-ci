@@ -1,4 +1,4 @@
-import {ICONS} from '@drarig29/d4t4d09-ci-core/dist/helpers/formatting'
+import {ICONS} from '@d4t4d09-ci/core/dist/helpers/formatting'
 import chalk from 'chalk'
 
 import {CommitInfo} from './interfaces'

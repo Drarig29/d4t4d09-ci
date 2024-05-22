@@ -1,9 +1,9 @@
 import {CloudWatchLogsClient} from '@aws-sdk/client-cloudwatch-logs'
 import {LambdaClient, LambdaClientConfig} from '@aws-sdk/client-lambda'
 import {AwsCredentialIdentity} from '@aws-sdk/types'
-import {requestConfirmation} from '@drarig29/d4t4d09-ci-core/dist/helpers/prompt'
-import * as helperRenderer from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
-import {DEFAULT_CONFIG_PATHS, resolveConfigFromFile} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import {requestConfirmation} from '@d4t4d09-ci/core/dist/helpers/prompt'
+import * as helperRenderer from '@d4t4d09-ci/core/dist/helpers/renderer'
+import {DEFAULT_CONFIG_PATHS, resolveConfigFromFile} from '@d4t4d09-ci/core/dist/helpers/utils'
 import chalk from 'chalk'
 import {Command, Option} from 'clipanion'
 

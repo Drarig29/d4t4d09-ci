@@ -1,7 +1,7 @@
-import {getCIEnv, PROVIDER_TO_DISPLAY_NAME} from '@drarig29/d4t4d09-ci-core/dist/helpers/ci'
-import {retryRequest} from '@drarig29/d4t4d09-ci-core/dist/helpers/retry'
-import {parseTags} from '@drarig29/d4t4d09-ci-core/dist/helpers/tags'
-import {getApiHostForSite, getRequestBuilder} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import {getCIEnv, PROVIDER_TO_DISPLAY_NAME} from '@d4t4d09-ci/core/dist/helpers/ci'
+import {retryRequest} from '@d4t4d09-ci/core/dist/helpers/retry'
+import {parseTags} from '@d4t4d09-ci/core/dist/helpers/tags'
+import {getApiHostForSite, getRequestBuilder} from '@d4t4d09-ci/core/dist/helpers/utils'
 import chalk from 'chalk'
 import {Command, Option} from 'clipanion'
 

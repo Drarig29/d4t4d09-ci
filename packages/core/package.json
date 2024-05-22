@@ -1,5 +1,5 @@
 {
-  "name": "@drarig29/d4t4d09-ci-core",
+  "name": "@d4t4d09-ci/core",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": true,

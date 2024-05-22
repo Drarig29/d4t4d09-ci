@@ -5,7 +5,7 @@ import {
   failCrossTag,
   renderError,
   renderSoftWarning,
-} from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
+} from '@d4t4d09-ci/core/dist/helpers/renderer'
 import chalk from 'chalk'
 import ora from 'ora'
 

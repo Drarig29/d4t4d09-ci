@@ -1,4 +1,4 @@
-import * as core from '@drarig29/d4t4d09-ci-core'
+import * as core from '@d4t4d09-ci/core'
 import chalk from 'chalk'
 import * as clipanion from 'clipanion'
 import * as semver from 'semver'
@@ -8,7 +8,7 @@ import * as typanion from 'typanion'
 
 export const getDynamicLibs = () =>
   new Map<string, any>([
-    [`@drarig29/d4t4d09-ci-core`, core],
+    [`@d4t4d09-ci/core`, core],
 
     // Those ones are always useful
     [`clipanion`, clipanion],

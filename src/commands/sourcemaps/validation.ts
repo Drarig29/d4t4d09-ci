@@ -1,6 +1,6 @@
 import {Writable} from 'stream'
 
-import {checkFile} from '@drarig29/d4t4d09-ci-core/dist/helpers/validation'
+import {checkFile} from '@d4t4d09-ci/core/dist/helpers/validation'
 
 import {Sourcemap} from './interfaces'
 import {renderMinifiedPathPrefixMisusage} from './renderer'

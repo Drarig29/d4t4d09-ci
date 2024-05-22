@@ -7,7 +7,7 @@ import type {AxiosResponse, InternalAxiosRequestConfig} from 'axios'
 import {AxiosError} from 'axios'
 import WebSocket, {Server as WebSocketServer} from 'ws'
 
-import {ProxyConfiguration} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import {ProxyConfiguration} from '@d4t4d09-ci/core/dist/helpers/utils'
 
 import {apiConstructor} from '../api'
 import {

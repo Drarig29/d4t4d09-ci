@@ -1,5 +1,5 @@
-import * as apikey from '@drarig29/d4t4d09-ci-core/dist/helpers/apikey'
-import * as upload from '@drarig29/d4t4d09-ci-core/dist/helpers/upload'
+import * as apikey from '@d4t4d09-ci/core/dist/helpers/apikey'
+import * as upload from '@d4t4d09-ci/core/dist/helpers/upload'
 
 import * as git from '../git'
 import * as gitdb from '../gitdb'

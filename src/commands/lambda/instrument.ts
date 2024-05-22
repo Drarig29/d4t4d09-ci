@@ -1,14 +1,14 @@
 import {CloudWatchLogsClient} from '@aws-sdk/client-cloudwatch-logs'
 import {LambdaClient, LambdaClientConfig} from '@aws-sdk/client-lambda'
 import {AwsCredentialIdentity} from '@aws-sdk/types'
-import {ENVIRONMENT_ENV_VAR, SERVICE_ENV_VAR, VERSION_ENV_VAR} from '@drarig29/d4t4d09-ci-core/dist/constants'
-import {requestConfirmation} from '@drarig29/d4t4d09-ci-core/dist/helpers/prompt'
-import * as helperRenderer from '@drarig29/d4t4d09-ci-core/dist/helpers/renderer'
+import {ENVIRONMENT_ENV_VAR, SERVICE_ENV_VAR, VERSION_ENV_VAR} from '@d4t4d09-ci/core/dist/constants'
+import {requestConfirmation} from '@d4t4d09-ci/core/dist/helpers/prompt'
+import * as helperRenderer from '@d4t4d09-ci/core/dist/helpers/renderer'
 import {
   resolveConfigFromFile,
   filterAndFormatGithubRemote,
   DEFAULT_CONFIG_PATHS,
-} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+} from '@d4t4d09-ci/core/dist/helpers/utils'
 import chalk from 'chalk'
 import {Cli, Command, Option} from 'clipanion'
 

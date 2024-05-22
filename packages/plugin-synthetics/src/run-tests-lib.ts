@@ -1,4 +1,4 @@
-import {getProxyAgent} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import {getProxyAgent} from '@d4t4d09-ci/core/dist/helpers/utils'
 
 import {APIHelper, getApiHelper, isForbiddenError} from './api'
 import {CiError, CriticalError} from './errors'

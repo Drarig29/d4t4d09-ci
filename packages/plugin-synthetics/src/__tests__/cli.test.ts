@@ -1,5 +1,5 @@
-import {createCommand} from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
-import * as ciUtils from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
+import {createCommand} from '@d4t4d09-ci/core/dist/helpers/__tests__/fixtures'
+import * as ciUtils from '@d4t4d09-ci/core/dist/helpers/utils'
 import {Cli} from 'clipanion/lib/advanced'
 
 import * as api from '../api'

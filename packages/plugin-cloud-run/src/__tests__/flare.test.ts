@@ -2,16 +2,16 @@ import fs from 'fs'
 import process from 'process'
 import stream from 'stream'
 
-import {API_KEY_ENV_VAR, CI_API_KEY_ENV_VAR} from '@drarig29/d4t4d09-ci-core/dist/constants'
+import {API_KEY_ENV_VAR, CI_API_KEY_ENV_VAR} from '@d4t4d09-ci/core/dist/constants'
 import {
   createMockContext,
   MOCK_CWD,
   MOCK_DATADOG_API_KEY,
   MOCK_FLARE_FOLDER_PATH,
-} from '@drarig29/d4t4d09-ci-core/dist/helpers/__tests__/fixtures'
-import * as helpersFlareModule from '@drarig29/d4t4d09-ci-core/dist/helpers/flare'
-import * as fsModule from '@drarig29/d4t4d09-ci-core/dist/helpers/fs'
-import * as helpersPromptModule from '@drarig29/d4t4d09-ci-core/dist/helpers/prompt'
+} from '@d4t4d09-ci/core/dist/helpers/__tests__/fixtures'
+import * as helpersFlareModule from '@d4t4d09-ci/core/dist/helpers/flare'
+import * as fsModule from '@d4t4d09-ci/core/dist/helpers/fs'
+import * as helpersPromptModule from '@d4t4d09-ci/core/dist/helpers/prompt'
 import {Logging} from '@google-cloud/logging'
 import {GoogleAuth} from 'google-auth-library'
 

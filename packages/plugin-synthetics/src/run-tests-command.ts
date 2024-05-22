@@ -2,9 +2,9 @@ import {Command, Option} from 'clipanion'
 import deepExtend from 'deep-extend'
 import terminalLink from 'terminal-link'
 
-import {removeUndefinedValues, resolveConfigFromFile} from '@drarig29/d4t4d09-ci-core/dist/helpers/utils'
-import * as validation from '@drarig29/d4t4d09-ci-core/dist/helpers/validation'
-import {isValidDatadogSite} from '@drarig29/d4t4d09-ci-core/dist/helpers/validation'
+import {removeUndefinedValues, resolveConfigFromFile} from '@d4t4d09-ci/core/dist/helpers/utils'
+import * as validation from '@d4t4d09-ci/core/dist/helpers/validation'
+import {isValidDatadogSite} from '@d4t4d09-ci/core/dist/helpers/validation'
 
 import {CiError} from './errors'
 import {MainReporter, Reporter, Result, RunTestsCommandConfig, Summary} from './interfaces'
