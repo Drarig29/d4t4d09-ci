@@ -41,7 +41,7 @@
     ]
   },
   "scripts": {
-    "build": "yarn clean; tsc --build",
+    "build": "yarn clean; tsc --build --verbose",
     "build:plugins": "yarn workspaces foreach --verbose --exclude @drarig29/d4t4d09-ci run build",
     "build:win": "tsc --build",
     "check-licenses": "node bin/check-licenses.js",
